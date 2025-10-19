@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+Titulo:
+  Vitrine de Produtos React/TypeScript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Descrição do Projeto:
+  Este projeto exibe uma vitrine de produtos em formato de carrossel, onde o usuário pode:
+    Visualizar até 4 produtos de cada vex no carrossel;
+    Clicar em um produto para abrir um modal com detalhes completos (imagem, nome, preço e descrição);
+    Clicar em quantidade de produtos para escolher a partir de 1 produto;
+    Navegar pelo carrossel com as setas de navegação;
+    Os produtos são carregados de forma dinâmica de um arquivo JSON externo.
 
-## Available Scripts
 
-In the project directory, you can run:
+Pré requisitos:
+ Antes de rodar o projeto, é necessario ter instalado:
+  Node.js (versão 18 ou superior recomendada)
+  npm (Vem junto com Node.js) ou yarn
+  Navegador moderno (Chrome, firefox, edge, etc.)
 
-### `npm start`
+Instalação:
+  Clone do repositorio: https://github.com/Bem-Eliezer/teste-front-end.git
+  cd https://github.com/Bem-Eliezer/teste-front-end.git
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  Instale as dependencias:
+    npm install
+    #ou
+    yarn install
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Estrutura do projeto:
+  src/ Código-fonte em React + TypeScript
+    Components/ Componentes reutilizáveis, como:
+      Produtos/ Card de cada produto
+      ListaProdutos/ Componente do carrossel
+        Contador/ contador de itens, para escolher a quantidade de itens que deseja comprar
+      Modal/ Modal de detalhes do produto
+      Botao/ Padronização de botões
+      Cadastro/ inserção de cadastro
+      Categoria/ Tipos de Categorias
+  styles/ Arquivos styled-components para estilização
+  public/ Arquivos estáticos, incluindo JSON de produtos
 
-### `npm test`
+Como rodar o Projeto:
+  npm start
+  #ou
+  yarn start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  O projeto será aberto no navegador automaticamente em http://localhost:3000.
+  Qualquer alteração no código será atualizada automaticamente (hot reload).
 
-### `npm run build`
+  Como Buildar/Compilar para produção:
+    Para gerar uma versão otimizada para produção:
+      npm run build
+      #ou
+      yarn build
+      Os arquivos finais serão criados na pasta build/.
+      Essa versão pode ser hospedada em qualquer servidor web.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  Como Testar o Modal e o Carrossel:
+    Abra a página principal.
+    O carrossel vai mostrar até 4 produtos visíveis por vez.
+    Use as setas para navegar pelos produtos.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    Clique em qualquer card de produto:
+      O modal será aberto.
+      O modal mostrará nome, imagem, preço e descrição do produto clicado.
+      Clique fora do modal ou no botão de fechar para fechar.
+      Observação: Certifique-se de que o JSON de produtos está carregando corretamente. O URL padrão usado é:
+      https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Observações Importantes
+      Se o carrossel não mostrar os produtos, verifique se o fetch do JSON está funcionando (problemas de CORS podem impedir o carregamento).
+      Para centralizar o carrossel, o styled-component Lista deve ter display: flex e justify-content: center.
+      Todos os produtos são mapeados dinamicamente do JSON, não é necessário alterar manualmente os cards.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+      Autor:
+      Bem Eliezer da Silva dos Santos
