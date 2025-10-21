@@ -87,6 +87,11 @@ export const Overlay = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.54);
   z-index: 10;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: 100%;
+  }
 `
 export const Modal = styled.div`
   position: fixed;

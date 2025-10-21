@@ -42,7 +42,9 @@ interface Produto {
 const ListaProdutos = () => {
   const [modalAberto, setModalAberto] = useState(false)
   const [produtos, setProdutos] = useState<Produto[]>([])
-  const containerRef = useRef<HTMLDivElement>(null)
+  const containerRef1 = useRef<HTMLDivElement | null>(null)
+  const containerRef2 = useRef<HTMLDivElement | null>(null)
+  const containerRef3 = useRef<HTMLDivElement | null>(null)
   const [produtoSelecionado, setProdutoSelecionado] = useState<Produto | null>(
     null
   )
@@ -62,14 +64,14 @@ const ListaProdutos = () => {
       })
   }, [])
 
-  const scrollLeft = () => {
-    containerRef.current?.scrollBy({
+  const scrollLeft = (ref: React.RefObject<HTMLDivElement | null>) => {
+    ref.current?.scrollBy({
       left: -304 * 4 - 18 * 3,
       behavior: 'smooth'
     })
   }
-  const scrollRight = () => {
-    containerRef.current?.scrollBy({
+  const scrollRight = (ref: React.RefObject<HTMLDivElement | null>) => {
+    ref.current?.scrollBy({
       left: 304 * 4 + 18 * 3,
       behavior: 'smooth'
     })
@@ -78,13 +80,13 @@ const ListaProdutos = () => {
   return (
     <>
       <Container>
-        <Seta1 onClick={scrollLeft}>
+        <Seta1 onClick={() => scrollLeft(containerRef1)}>
           <img src={seta1} alt="Anterior" />
         </Seta1>
         <Lista>
           <div
             className="container"
-            ref={containerRef}
+            ref={containerRef1}
             onClick={() => setModalAberto(true)}
           >
             {produtos.map((produto) => {
@@ -104,7 +106,7 @@ const ListaProdutos = () => {
             })}
           </div>
         </Lista>
-        <Seta onClick={scrollRight}>
+        <Seta onClick={() => scrollRight(containerRef1)}>
           <img src={seta} alt="Próximo" />
         </Seta>
       </Container>
@@ -116,13 +118,13 @@ const ListaProdutos = () => {
       </Container1>
       <Vertodos>Ver todos</Vertodos>
       <Container>
-        <Seta1 onClick={scrollLeft}>
+        <Seta1 onClick={() => scrollLeft(containerRef2)}>
           <img src={seta1} alt="Anterior" />
         </Seta1>
         <Lista>
           <div
             className="container"
-            ref={containerRef}
+            ref={containerRef2}
             onClick={() => setModalAberto(true)}
           >
             {produtos.map((produto) => {
@@ -133,12 +135,16 @@ const ListaProdutos = () => {
                   descricao={produto.descriptionShort}
                   imagem={produto.photo}
                   preco={produto.price}
+                  onClick={() => {
+                    setProdutoSelecionado(produto)
+                    setModalAberto(true)
+                  }}
                 />
               )
             })}
           </div>
         </Lista>
-        <Seta onClick={scrollRight}>
+        <Seta onClick={() => scrollRight(containerRef2)}>
           <img src={seta} alt="Próximo" />
         </Seta>
       </Container>
@@ -151,13 +157,13 @@ const ListaProdutos = () => {
       </Container1>
       <Vertodos>Ver todos</Vertodos>
       <Container>
-        <Seta1 onClick={scrollLeft}>
+        <Seta1 onClick={() => scrollLeft(containerRef3)}>
           <img src={seta1} alt="Anterior" />
         </Seta1>
         <Lista>
           <div
             className="container"
-            ref={containerRef}
+            ref={containerRef3}
             onClick={() => setModalAberto(true)}
           >
             {produtos.map((produto) => {
@@ -168,12 +174,16 @@ const ListaProdutos = () => {
                   descricao={produto.descriptionShort}
                   imagem={produto.photo}
                   preco={produto.price}
+                  onClick={() => {
+                    setProdutoSelecionado(produto)
+                    setModalAberto(true)
+                  }}
                 />
               )
             })}
           </div>
         </Lista>
-        <Seta onClick={scrollRight}>
+        <Seta onClick={() => scrollRight(containerRef3)}>
           <img src={seta} alt="Próximo" />
         </Seta>
       </Container>

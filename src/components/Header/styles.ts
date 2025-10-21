@@ -94,6 +94,10 @@ export const Menu = styled.div`
   margin: 0 auto;
   background-color: ${cores.branco};
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 1024px) {
+    width: 1280px;
+  }
 `
 export const ListaLink = styled.ul`
   height: 18px;

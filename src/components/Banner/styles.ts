@@ -16,6 +16,15 @@ export const Imagem = styled.div`
     margin-top: 41px;
     margin-bottom: 55px;
   }
+
+
+  @media (max-width: 1024px) {
+    ${BotaoContainer} {
+    max-width: 210px;
+    margin-left: 87px;
+    margin-top: 41px;
+    margin-bottom: 55px;
+  }
 `
 
 export const Titulo = styled.h2`
