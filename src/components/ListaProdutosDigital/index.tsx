@@ -1,13 +1,13 @@
 import {
   Container,
-  Div,
+  ListaContainer,
   Item,
-  ItemDif,
   Linha,
   ListaProduto,
   Titulo
 } from './styles'
 
+// Componente ListaProdDigital que exibe uma lista de categorias de produtos digitais
 const ListaProdDigital = () => (
   <>
     <Container>
@@ -15,16 +15,16 @@ const ListaProdDigital = () => (
       <Titulo>Produtos relacionados</Titulo>
       <Linha />
     </Container>
-    <Div>
+    <ListaContainer>
       <ListaProduto>
-        <ItemDif>CELULAR</ItemDif>
+        <Item destaque>CELULAR</Item>
         <Item>ACESSÓRIOS</Item>
         <Item>TABLETS</Item>
         <Item>NOTEBOOKS</Item>
         <Item>TVS</Item>
         <Item>VER TODOS</Item>
       </ListaProduto>
-    </Div>
+    </ListaContainer>
   </>
 )
 

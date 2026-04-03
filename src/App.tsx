@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import Header from './components/Header'
+import Header from './components/Cabecalho'
 import { GlobalCss } from './styles'
 import Home from './Pagina/Home'
 

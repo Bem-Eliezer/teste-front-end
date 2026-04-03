@@ -1,9 +1,10 @@
-import { Div, Frase } from './styles'
+import { Container, Frase } from './styles'
 
+// Componente que exibe um espaço final com uma frase
 const EspacoFinal = () => (
-  <Div>
+  <Container>
     <Frase>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Frase>
-  </Div>
+  </Container>
 )
 
 export default EspacoFinal

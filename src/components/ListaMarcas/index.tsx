@@ -1,10 +1,11 @@
 import marca from '../../assets/images/marca.svg'
-import { Div, Lista, Titulo } from './styles'
+import { Lista, ListaContainer, Titulo } from './styles'
 
+// Componente ListaMarcas que exibe uma lista de marcas para navegação
 const ListaMarcas = () => (
   <>
     <Titulo>Navegue por marcas</Titulo>
-    <Div>
+    <ListaContainer>
       <Lista>
         <li>
           <img src={marca} alt="econverse" />
@@ -22,7 +23,7 @@ const ListaMarcas = () => (
           <img src={marca} alt="econverse" />
         </li>
       </Lista>
-    </Div>
+    </ListaContainer>
   </>
 )
 

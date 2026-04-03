@@ -6,59 +6,53 @@ import saude from '../../assets/images/cuidados-de-saude.svg'
 import esporte from '../../assets/images/corrida.svg'
 import moda from '../../assets/images/roupa.svg'
 
-import {
-  Descricao,
-  DescricaoSelecionado,
-  FundoBranco,
-  FundoCinza,
-  Imagem,
-  Lista,
-  Variedades
-} from './styles'
+import { Descricao, Fundo, Imagem, Lista, Variedades } from './styles'
+
+// Componente Categoria que exibe uma lista de categorias de produtos
 
 const Categoria = () => (
   <Variedades>
     <Lista>
       <li>
-        <FundoBranco>
+        <Fundo variante="branco">
           <Imagem src={computador} alt="computador" />
-        </FundoBranco>
-        <DescricaoSelecionado>Tecnologia</DescricaoSelecionado>
+        </Fundo>
+        <Descricao selecionado>Tecnologia</Descricao>
       </li>
       <li>
-        <FundoCinza>
+        <Fundo variante="cinza">
           <Imagem src={marcado} alt="SuperMercado" />
-        </FundoCinza>
+        </Fundo>
         <Descricao>Supermercado</Descricao>
       </li>
       <li>
-        <FundoCinza>
+        <Fundo variante="cinza">
           <Imagem src={bebidas} alt="bebidas" />
-        </FundoCinza>
+        </Fundo>
         <Descricao>Bebidas</Descricao>
       </li>
       <li>
-        <FundoCinza>
+        <Fundo variante="cinza">
           <Imagem src={ferramenta} alt="ferramenta" />
-        </FundoCinza>
+        </Fundo>
         <Descricao>Ferramentas</Descricao>
       </li>
       <li>
-        <FundoCinza>
+        <Fundo variante="cinza">
           <Imagem src={saude} alt="saude" />
-        </FundoCinza>
+        </Fundo>
         <Descricao>Saúde</Descricao>
       </li>
       <li>
-        <FundoCinza>
+        <Fundo variante="cinza">
           <Imagem src={esporte} alt="esporte" />
-        </FundoCinza>
+        </Fundo>
         <Descricao>Esporte e Fitness</Descricao>
       </li>
       <li>
-        <FundoCinza>
+        <Fundo variante="cinza">
           <Imagem src={moda} alt="moda" />
-        </FundoCinza>
+        </Fundo>
         <Descricao>Moda</Descricao>
       </li>
     </Lista>

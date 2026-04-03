@@ -20,15 +20,14 @@ export const Linha = styled.hr`
 
 export const Titulo = styled.h3`
   margin-top: 90px;
-  display: flex;
-  justify-content: center;
+  text-align: center;
   margin-bottom: 4px;
-  height: 45px;
   font-size: 30px;
   color: ${cores.azul};
 `
 
-export const Div = styled.div`
+export const ListaContainer = styled.div`
+  margin-bottom: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,24 +39,21 @@ export const ListaProduto = styled.ul`
   grid-template-rows: repeat(1, 40px);
   gap: 0;
   padding: 0;
+  justify-content: center;
 `
 
-export const ItemDif = styled.li`
-  font-weight: 700;
+type ItemProps = {
+  destaque?: boolean
+}
+
+export const Item = styled.li<ItemProps>`
+  font-weight: ${({ destaque }) => (destaque ? 700 : 400)};
   font-size: 16px;
   border: 1px solid ${cores.bordaDaLista};
+
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${cores.azul};
-`
 
-export const Item = styled.li`
-  font-weight: 400;
-  font-size: 16px;
-  border: 1px solid ${cores.bordaDaLista};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: ${cores.grafiteProdutos};
+  color: ${({ destaque }) => (destaque ? cores.azul : cores.grafiteProdutos)};
 `

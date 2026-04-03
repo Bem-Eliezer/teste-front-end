@@ -48,4 +48,5 @@ export const BotaoLink = styled(Link)<Props>`
     props.size === 'grande' ? '5px' : props.size === 'medio' ? '4px' : ' 6px'};
   display: inline-block;
   border: none;
+  cursor: pointer;
 `

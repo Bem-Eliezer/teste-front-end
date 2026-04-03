@@ -5,23 +5,19 @@ export const Variedades = styled.div`
   margin-top: 39px;
 `
 
-export const FundoBranco = styled.div`
-  background-color: ${cores.branco};
-  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  width: 128px;
-  height: 128px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
+type FundoProps = {
+  variante?: 'branco' | 'cinza'
+}
 
-export const FundoCinza = styled.div`
-  background-color: ${cores.FundoCinza};
+export const Fundo = styled.div<FundoProps>`
+  background-color: ${({ variante }) =>
+    variante === 'cinza' ? cores.FundoCinza : cores.branco};
+
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   width: 128px;
   height: 128px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,20 +44,18 @@ export const Lista = styled.ul`
     text-align: center;
   }
 `
-export const DescricaoSelecionado = styled.p`
-  font-weight: 600;
-  font-size: 14px;
-  height: 21px;
-  color: ${cores.roxoLista};
-  padding-top: 22px;
-  white-space: nowrap;
-`
 
-export const Descricao = styled.p`
-  font-weight: 500;
+type DescricaoProps = {
+  selecionado?: boolean
+}
+
+export const Descricao = styled.p<DescricaoProps>`
+  font-weight: ${({ selecionado }) => (selecionado ? 600 : 500)};
   font-size: 14px;
   height: 21px;
-  color: ${cores.grafite};
+  color: ${({ selecionado }) =>
+    selecionado ? cores.roxoLista : cores.grafite};
+
   padding-top: 22px;
   white-space: nowrap;
 `

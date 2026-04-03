@@ -15,7 +15,12 @@ import {
 } from './styles'
 
 const Rodape = () => (
+  // Rodapé do site com logo, frase e links sociais
+  // eslint-disable-next-line react/jsx-no-comment-textnodes
   <Rodape1>
+    // Divisão do rodapé em duas partes: a primeira com o logo, frase e links
+    sociais, e a segunda com uma lista de links institucionais, de ajuda e
+    termos
     <DivLogo>
       <Logo src={logo} alt="" />
       <Frase>Lorem ipsum dolor sit amet, consectetur bradipiscing elit.</Frase>

@@ -3,7 +3,7 @@ Vitrine de Produtos React/TypeScript
 
 Descrição do Projeto:
 Este projeto exibe uma vitrine de produtos em formato de carrossel, onde o usuário pode:
-Visualizar até 4 produtos de cada vex no carrossel;
+Visualizar até 4 produtos de cada vez no carrossel;
 Clicar em um produto para abrir um modal com detalhes completos (imagem, nome, preço e descrição);
 Clicar em quantidade de produtos para escolher a partir de 1 produto;
 Navegar pelo carrossel com as setas de navegação;
@@ -65,10 +65,6 @@ Use as setas para navegar pelos produtos.
       Observação: Certifique-se de que o JSON de produtos está carregando corretamente. O URL padrão usado é:
       https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json
 
-    Observações Importantes
-      Se o carrossel não mostrar os produtos, verifique se o fetch do JSON está funcionando (problemas de CORS podem impedir o carregamento).
-      Para centralizar o carrossel, o styled-component Lista deve ter display: flex e justify-content: center.
-      Todos os produtos são mapeados dinamicamente do JSON, não é necessário alterar manualmente os cards.
 
       Autor:
       Bem Eliezer da Silva dos Santos

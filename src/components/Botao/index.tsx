@@ -1,16 +1,24 @@
 import { BotaoContainer, BotaoLink } from './styles'
-import { title } from 'process'
+
+// Tipo de props para o componente Botao, definindo as opções de tamanho, tipo e comportamento
 
 export type Props = {
   size?: 'pequeno' | 'medio' | 'grande'
-  children: string
-  type: 'button' | 'link'
+  children: React.ReactNode
+  type?: 'button' | 'link'
   title: string
   to?: string
-  onClick?: () => void
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-const Botao = ({ type, children, size = 'pequeno', onClick }: Props) => {
+const Botao = ({
+  type,
+  children,
+  size = 'pequeno',
+  onClick,
+  title,
+  to
+}: Props) => {
   if (type === 'button') {
     return (
       <BotaoContainer size={size} type="button" title={title} onClick={onClick}>
@@ -20,7 +28,7 @@ const Botao = ({ type, children, size = 'pequeno', onClick }: Props) => {
   }
 
   return (
-    <BotaoLink to="/" title={title} type="button">
+    <BotaoLink to={to || '/'} title={title}>
       {children}
     </BotaoLink>
   )

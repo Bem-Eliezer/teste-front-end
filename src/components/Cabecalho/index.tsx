@@ -22,6 +22,8 @@ import login from '../../assets/images/login.svg'
 import carrinho from '../../assets/images/carrinho.svg'
 import coroa from '../../assets/images/coroa.svg'
 
+// Componente Header que exibe o cabeçalho do site com informações de segurança, logo, barra de pesquisa e menu de navegação
+
 const Header = () => (
   <>
     <HeaderBar1>
@@ -73,7 +75,7 @@ const Header = () => (
         <li>LIVROS</li>
         <li>MODA</li>
         <li>LANÇAMENTOS</li>
-        <TextoAzul className="textoOferta">OFERTA DO DIA</TextoAzul>
+        <TextoAzul oferta>OFERTA DO DIA</TextoAzul>
         <li>
           <img src={coroa} alt="" />
           ASSINATURA

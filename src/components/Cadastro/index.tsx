@@ -1,20 +1,21 @@
 import Botao from '../Botao'
 import {
   Check,
-  DivFrase,
-  DivInput,
-  DivTermo,
+  ContainerTexto,
+  GrupoInput,
+  TermosContainer,
   Espaco,
   Frase,
   Input,
-  Input1,
   Termos,
   Titulo
 } from './styles'
 
+// Componente Cadastro que exibe um formulário de inscrição para a newsletter
+
 const Cadastro = () => (
   <Espaco>
-    <DivFrase>
+    <ContainerTexto>
       <Titulo>Inscreva-se na nossa newsletter</Titulo>
       <div>
         <Frase>
@@ -23,20 +24,20 @@ const Cadastro = () => (
           da Econverse.
         </Frase>
       </div>
-    </DivFrase>
-    <DivInput>
+    </ContainerTexto>
+    <GrupoInput>
       <Termos>
-        <Input1 type="text" placeholder="Digite seu nome" />
-        <DivTermo>
+        <Input type="text" placeholder="Digite seu nome" />
+        <TermosContainer>
           <Check type="checkbox" />
           <span>aceito os termos e condições</span>
-        </DivTermo>
+        </TermosContainer>
       </Termos>
       <Input type="text" placeholder="Digite seu e-mail" />
       <Botao type={'button'} title={'inscrever'} size="medio">
         INSCREVER
       </Botao>
-    </DivInput>
+    </GrupoInput>
   </Espaco>
 )
 

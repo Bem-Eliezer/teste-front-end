@@ -1,14 +1,14 @@
-import styles, { styled } from 'styled-components'
+import { styled } from 'styled-components'
 import { cores } from '../../styles'
-import Botao from '../Botao'
+
 import { BotaoContainer } from '../Botao/styles'
-import { check } from 'prettier'
 
 export const Espaco = styled.div`
   background-color: ${cores.violeta};
   height: 162px;
-  width: 1440px;
-  margin-top: 90px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
 
   ${BotaoContainer} {
@@ -19,7 +19,7 @@ export const Espaco = styled.div`
     justify-content: center;
   }
 `
-export const DivFrase = styled.div`
+export const ContainerTexto = styled.div`
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 80px;
@@ -30,7 +30,7 @@ export const DivFrase = styled.div`
   }
 `
 
-export const DivInput = styled.div`
+export const GrupoInput = styled.div`
   display: flex;
   gap: 10px;
   margin-top: 45.5px;
@@ -38,7 +38,7 @@ export const DivInput = styled.div`
   height: 42px;
 `
 
-export const DivTermo = styled.div`
+export const TermosContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 4px;
@@ -75,26 +75,14 @@ export const Check = styled.input`
   cursor: pointer;
 `
 
-export const Input1 = styled.input`
-  display: block;
+type InputProps = {
+  largura?: string
+}
+
+export const Input = styled.input<InputProps>`
   height: 42px;
-  width: 233px;
+  width: ${({ largura }) => largura || '233px'};
   border-radius: 8px;
   border: none;
-
-  &::placeholder {
-    padding: 24px;
-  }
-`
-
-export const Input = styled.input`
-  display: flex;
-  height: 42px;
-  width: 233px;
-  border-radius: 8px;
-  border: none;
-
-  &::placeholder {
-    padding: 24px;
-  }
+  padding: 10px;
 `

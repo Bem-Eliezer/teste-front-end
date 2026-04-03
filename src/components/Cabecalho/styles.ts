@@ -10,13 +10,12 @@ export const HeaderBar1 = styled.header`
 
 export const Lista = styled.ul`
   display: grid;
-  grid-template-columns: repeat(3, 203px);
+  grid-template-columns: 158px 203px 165px;
   grid-template-rows: auto;
   gap: 119px;
   place-items: center;
+  white-space: nowrap;
   justify-content: center;
-
-  }
 `
 
 export const Item = styled.li`
@@ -26,16 +25,18 @@ export const Item = styled.li`
 export const Icone = styled.img`
   margin-right: 9px;
 `
+type TextoAzulProps = {
+  oferta?: boolean
+}
 
-export const TextoAzul = styled.span`
+export const TextoAzul = styled.span<TextoAzulProps>`
   color: ${cores.azul};
   font-weight: 600;
   font-size: 12px;
 
-  &.textoOferta {
-    margin-top: 10px;
-  }
+  margin-top: ${({ oferta }) => (oferta ? '10px' : '0')};
 `
+
 export const HeaderBar2 = styled.div`
   background-color: ${cores.branco};
   font-weight: 500;
@@ -47,9 +48,6 @@ export const HeaderBar2 = styled.div`
     display: flex;
     align-items: center;
   }
-
-  img {
-  }
 `
 export const BarraDePesquisa = styled.div`
   background-color: ${cores.gelo};
@@ -58,7 +56,7 @@ export const BarraDePesquisa = styled.div`
   align-items: center;
   border-radius: 10px;
   width: 630px;
-  padding: 0 10px;
+  padding: 0 24px 0 16px;
   margin: 12px 109px 12px 186px;
 
   input {
@@ -78,6 +76,7 @@ export const BarraDePesquisa = styled.div`
 `
 
 export const ListaIcones = styled.ul`
+  height: 32px;
   cursor: pointer;
   display: grid;
   grid-template-columns: 24px 32px 32px 32px;

@@ -3,7 +3,9 @@ import { cores } from '../../styles'
 
 export const Rodape1 = styled.div`
   background-color: ${cores.FundoCinza};
+  width: 100%;
   max-width: 1440px;
+  margin: 0 auto;
   height: 282px;
   display: flex;
 `
@@ -59,7 +61,7 @@ export const Lista = styled.div`
   margin-left: 90px;
 `
 
-export const Titulo = styled.p`
+export const Titulo = styled.h4`
   font-weight: 700;
   font-size: 16px;
   color: ${cores.corLetraRodape};
